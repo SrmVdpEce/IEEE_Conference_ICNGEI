@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: "Audiowide", sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #FFFFFF;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            margin-right: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav li:last-child {
+            margin-right: 0;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            font-family: 'DynaPuff', cursive;
+        }
+
+        .nav a:hover {
+            color: #C4F260;
+            transform: scale(1.1);
+        }
+
+        .logo-text {
+            font-size: 6rem;
+            color: #000000;
+            margin: 1rem 0;
+        }
+
+        .important-dates-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #C4F260;
+            color: #000000;
+            padding: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+
+        .popup {
+            position: fixed;
+            left: -300px; /* Initially hidden */
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FFFFFF;
+            color: #000000;
+            width: 300px;
+            border: 2px solid #C4F260;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .popup p {
+            margin: 0.5rem 0;
+        }
+
+        .close-popup {
+            cursor: pointer;
+            color: #C4F260;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .close-popup:hover {
+            color: #000000;
+        }
+
+        .conference-scope {
+            max-width: 800px;
+            margin: 20px auto; /* Center the scope text */
+            padding: 20px;
+            text-align: justify; /* Align text to the left */
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logoo.png" alt="Logo">
+    </div>
+
+    <ul class="nav">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</div>
+
+<div class="header">
+    <h1 class="logo-text">ICNGEI</h1>
+</div>
+
+<div class="conference-scope">
+    <h2>Conference Scope</h2>
+    <p>
+        The scope of the conference aims to advance the current level of data science and Business Systems across different fields and stimulating innovation to challenge intricate real-world problems. The conference covers a broad spectrum of data science, machine learning, and business Systems topics would highlight cutting-edge research, emerging trends like explainable AI, IoT analytics, and ethical considerations in data science, alongside practical applications in industry sectors. It would serve as a key connection for academia-industry collaborations, knowledge exchange, and innovation in applying data science to solve real-world problems. The event would also focus on the latest tools and case studies, reflecting current trends and advancements in technology and business strategies.
+    </p>
+</div>
+
+<div class="important-dates-bar" onclick="togglePopup()">
+    📅 Important Dates
+</div>
+
+<div class="popup" id="popup">
+    <h2>Important Dates</h2>
+    <p>Conference Dates: 7th & 8th November, 2025</p>
+    <p>Submission of Abstract: 20th August, 2025</p>
+    <p>Submission of Full Paper: 10th September, 2025</p>
+    <p>Acceptance Notification: 20th September, 2025</p>
+    <p>Final Manuscript Due: 30th September, 2025</p>
+    <span class="close-popup" onclick="togglePopup()">✖ Close</span>
+</div>
+
+<script>
+    function togglePopup() {
+        const popup = document.getElementById('popup');
+        if (popup.style.left === '0px') {
+            popup.style.left = '-300px'; // Hide the popup
+        } else {
+            popup.style.left = '0px'; // Show the popup
+        }
+    }
+</script>
+
+</body>
+</html>
